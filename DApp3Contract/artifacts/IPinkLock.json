@@ -1,0 +1,259 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"editLock(uint256,uint256,uint256)": "b3b9aa48",
+			"lock(address,address,bool,uint256,uint256,string)": "07279357",
+			"multipleVestingLock(address[],uint256[],address,bool,uint256,uint256,uint256,uint256,string)": "e0da83ce",
+			"unlock(uint256)": "6198e339",
+			"vestingLock(address,address,bool,uint256,uint256,uint256,uint256,uint256,string)": "cb645e32"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "lockId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "newAmount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "newUnlockDate",
+					"type": "uint256"
+				}
+			],
+			"name": "editLock",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "isLpToken",
+					"type": "bool"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "unlockDate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "description",
+					"type": "string"
+				}
+			],
+			"name": "lock",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "lockId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "owners",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "amounts",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "isLpToken",
+					"type": "bool"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tgeDate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tgeBps",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "cycle",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "cycleBps",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "description",
+					"type": "string"
+				}
+			],
+			"name": "multipleVestingLock",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "lockId",
+					"type": "uint256"
+				}
+			],
+			"name": "unlock",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "isLpToken",
+					"type": "bool"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tgeDate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tgeBps",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "cycle",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "cycleBps",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "description",
+					"type": "string"
+				}
+			],
+			"name": "vestingLock",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "lockId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "payable",
+			"type": "function"
+		}
+	]
+}

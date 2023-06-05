@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.16+commit.07a7930e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "readAuthorizedUsers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"DApp3Contract/ISnipeFinanceMultisenders.sol": "ISnipeFinanceMultisenders"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"DApp3Contract/ISnipeFinanceMultisenders.sol": {
+			"keccak256": "0x5c0789fbbafd5d5087b49d8ee0cdc7b1689ff89c20def516f7d931ba8c5b0f6e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bb95b79a4fe98ce8acf9e38d127b8d19cc7617f3dd2b7543eba4b6ddd889ffaf",
+				"dweb:/ipfs/QmdsMKpKBr4gLppKJbD5Y7whBBbwznNKJ9q2XfWHQ8YyRV"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.16+commit.07a7930e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"DApp3Contract/FullMath.sol": "FullMath"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"DApp3Contract/FullMath.sol": {
+			"keccak256": "0xf8a0aa3eb8347357e75dd2a5368a5897bb9e8dde6cad692d90e40aadedecde80",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://31c6b1269ea99fe08f62e317d800ec44e93acd8c0f74feea6f31ba9a0c310e48",
+				"dweb:/ipfs/QmdMwoevaMbahzkPqVwKrZ363gQBm8omMSMjRpa4Ebym48"
+			]
+		}
+	},
+	"version": 1
+}
