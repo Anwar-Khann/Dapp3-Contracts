@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"SnipeFinanceMultisenders (2)/bep20_flattened.sol": "Context"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"SnipeFinanceMultisenders (2)/bep20_flattened.sol": {
+			"keccak256": "0x9a5619d5bd290e89858daacafcdd4bed34a881f988d86d9b2b147daee7416ae9",
+			"urls": [
+				"bzz-raw://eb537547ca0cb34dc61f6e771f3d3a49e07bc5c115a557e7c4886b576e613a55",
+				"dweb:/ipfs/QmdTD5zmfecHkkHy2QA2Em28TX4iPcmPtQraQ6zW2ACq9Y"
+			]
+		}
+	},
+	"version": 1
+}

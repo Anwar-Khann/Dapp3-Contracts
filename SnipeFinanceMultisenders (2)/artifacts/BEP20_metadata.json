@@ -375,11 +375,11 @@
 			]
 		},
 		"SnipeFinanceMultisenders (2)/bep20.sol": {
-			"keccak256": "0xb5c642588994c4b7bda06340f42d913b04d2d30656527894f2bb593107c15da6",
+			"keccak256": "0xe0590a3a1007599e0ae381e4bf2fec1347d3c20edf152d6302ffdc9217c5a3ca",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b790b6b1e57e4c6bbb70ea4271c540c8a29f4c51da1fa4e0c896f5c656f3a47c",
-				"dweb:/ipfs/QmfYeWpnNredZ854FdyiUtZvhetXSxxm8rGdr1rYfjUwGN"
+				"bzz-raw://e6c1f7cfdf68c0797fabfc1cce4cf9651f216f3fb03c7d4279cf8d69fa71d8a4",
+				"dweb:/ipfs/QmdTaCbkjVwaHQcHXr9WK1Atfkv1S1YDcGWML8fZMW6813"
 			]
 		}
 	},
