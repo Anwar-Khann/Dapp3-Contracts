@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.16+commit.07a7930e"
+		"version": "0.8.13+commit.abaa5c0e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -317,7 +317,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": "SnipeFinanceMultisenders"
+			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": "SnipeFinanceMultisenders"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -331,36 +331,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"@openzeppelin/contracts/access/Ownable.sol": {
-			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
+		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": {
+			"keccak256": "0x9ba825a239ad4b21a996f8e61df677392562f6ec48ab22e25f145dcfb4202091",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
-				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
-			]
-		},
-		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
-				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
-			]
-		},
-		"@openzeppelin/contracts/utils/Context.sol": {
-			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
-				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
-			]
-		},
-		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": {
-			"keccak256": "0x44c41f737c87abbd98c6b7ef7312b7c2e7a7be3a1d6b96ea9a66edbecab499cb",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://b0fa79bdae9b4f532f2fedc2ebb17d97a77076f7487bc5e234bdf8d5224a5161",
-				"dweb:/ipfs/QmVoX4SgRjk4SwSS5qq8MRCcsh21x8ZFct7Eb7zP2nen5e"
+				"bzz-raw://754fbe556f804e807e61f59ba3f7b76baecc10960202070fa18b57cc4a7ac5fd",
+				"dweb:/ipfs/QmdCCGiQWygJFa4ar2g5wLR9AWBTMopXHmVRGpRHmSovmb"
 			]
 		}
 	},

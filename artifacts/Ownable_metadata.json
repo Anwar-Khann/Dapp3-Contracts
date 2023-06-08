@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.13+commit.abaa5c0e"
+		"version": "0.8.16+commit.07a7930e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -85,7 +85,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": "Ownable"
+			"changes_flattened.sol": "Ownable"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -99,12 +99,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": {
-			"keccak256": "0x9ba825a239ad4b21a996f8e61df677392562f6ec48ab22e25f145dcfb4202091",
+		"changes_flattened.sol": {
+			"keccak256": "0x4c1ab204f9dbc03065dd280c3ee58d492c4db6ae1d317ee24f6450466eb8f1fd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://754fbe556f804e807e61f59ba3f7b76baecc10960202070fa18b57cc4a7ac5fd",
-				"dweb:/ipfs/QmdCCGiQWygJFa4ar2g5wLR9AWBTMopXHmVRGpRHmSovmb"
+				"bzz-raw://c31861475d3c95f34379a14c7ec46b90b5589cbc1ac167ed1ed8e77aae94a2b4",
+				"dweb:/ipfs/QmYj3UHHqq3G6Gz2TXDXuVSAL5MvSgyd5b7JhWPi33EwHe"
 			]
 		}
 	},
