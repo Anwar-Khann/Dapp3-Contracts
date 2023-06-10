@@ -5,26 +5,31 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 
+//the reason for this another interface creation because we want to use the decimal's function of each token and it's not available in standard interface
+interface ICustomERC20 is IERC20 {
+    function decimals() external view returns (uint256);
+}
+
 contract SnipeFinanceMultisenders is Ownable {
     using Address for address;
     uint256 public fee;
-    address payable public receiver;
-    uint256 public feeamounts;
+    address payable public receiver; //tho owner of a contract
     mapping(address => bool) public authorizedusers;
-    IERC20 public tokenaddress; // HODL SNIPE token to use the tool for free
-    uint256 public quantity; // must HODL at least tokens set
+    IERC20 public tokenAddress; //  token to hold for using  the tool for free
+    uint256 public quantity; // minimum hoding amount of tokenaddress at minimum tokens 
 
     constructor() {
         receiver = payable(owner());
         fee = 1 * 10**14;
     }
 
+    //this modifier is responsible for letting know whetehr token holding has been set or not
     modifier tokenChecker() {
-        require(address(tokenaddress) != address(0), "set token holding first");
+        require(address(tokenAddress) != address(0), "set token holding first");
         _;
     }
 
-    function BNBmultisender(
+    function coinMultisender(
         address[] memory recipients,
         uint256[] memory values
     ) external payable tokenChecker {
@@ -37,27 +42,27 @@ contract SnipeFinanceMultisenders is Ownable {
 
         if (authorizedusers[msg.sender]) {
             require(
-                msg.value >= totalValues,
-                "user authorized but msg.value is invalid to cover fund's for user's"
+                msg.value == totalValues,
+                "pay the exact amount to cover distribution"
             );
             for (uint256 i = 0; i < recipients.length; i++) {
                 payable(recipients[i]).transfer(values[i]);
             }
         } else if (!authorizedusers[msg.sender]) {
-            if (tokenaddress.balanceOf(msg.sender) >= quantity) {
+            if (tokenAddress.balanceOf(msg.sender) >= quantity) {
                 authorizedusers[msg.sender] = true;
                 require(
-                    msg.value >= totalValues,
-                    "user authorized because of high quantity but msg.value low"
+                    msg.value == totalValues,
+                    "holding quantity true but msg.value uncertain pay exact"
                 );
                 for (uint256 i = 0; i < recipients.length; i++) {
                     payable(recipients[i]).transfer(values[i]);
                 }
-            } else if (tokenaddress.balanceOf(msg.sender) < quantity) {
+            } else if (tokenAddress.balanceOf(msg.sender) < quantity) {
                 uint256 toBeIncluded = fee + totalValues;
                 require(
-                    msg.value >= toBeIncluded,
-                    "neither authorized and don't have enough token balance"
+                    msg.value == toBeIncluded,
+                    "holding & authorization false pay exact fee"
                 );
                 payable(receiver).transfer(fee);
                 for (uint256 i = 0; i < recipients.length; i++) {
@@ -65,51 +70,59 @@ contract SnipeFinanceMultisenders is Ownable {
                 }
             }
         }
-        uint256 balance = address(this).balance;
-        if (address(this).balance > 0) {
-            payable(msg.sender).transfer(balance);
-        }
     }
 
     function TOKENmultisender(
-        IERC20 token,
+        ICustomERC20 token,
         address[] memory recipients,
         uint256[] memory values
     ) external payable tokenChecker {
-        require(address(token).isContract() == true, "not a contract");//this will check whether it's a contract or EOA address
+        require(address(token).isContract() == true, "not a contract"); //this will check whether it's a contract or EOA address
         require(recipients.length == values.length, "invalid input");
-        //sub sy pehly values ko 18 decimal me convert karain gy
+        uint256 fetched = fetchDecimals(token);
+
+        // Convert values to fetched token decimals
         for (uint256 i = 0; i < values.length; i++) {
-            values[i] = values[i] * 10**18;
+            values[i] = values[i] * (10**fetched);
         }
 
         if (authorizedusers[msg.sender]) {
             for (uint256 i = 0; i < values.length; i++) {
                 require(
-                    token.transferFrom(msg.sender, recipients[i], values[i])
+                    token.transferFrom(msg.sender, recipients[i], values[i]),
+                    "error in distribution"
                 );
             }
         } else if (!authorizedusers[msg.sender]) {
-            if (tokenaddress.balanceOf(msg.sender) >= quantity) {
+            if (tokenAddress.balanceOf(msg.sender) >= quantity) {
                 authorizedusers[msg.sender] = true;
                 for (uint256 i = 0; i < values.length; i++) {
                     require(
-                        token.transferFrom(msg.sender, recipients[i], values[i])
+                        token.transferFrom(
+                            msg.sender,
+                            recipients[i],
+                            values[i]
+                        ),
+                        "error in distribution"
                     );
                 }
-            } else if (tokenaddress.balanceOf(msg.sender) < quantity) {
-                require(msg.value >= fee, "not authorized and low msg.value");
+            } else if (tokenAddress.balanceOf(msg.sender) < quantity) {
+                require(
+                    msg.value == fee,
+                    "holding & authorization false pay exact fee"
+                );
                 payable(receiver).transfer(fee);
                 for (uint256 i = 0; i < values.length; i++) {
                     require(
-                        token.transferFrom(msg.sender, recipients[i], values[i])
+                        token.transferFrom(
+                            msg.sender,
+                            recipients[i],
+                            values[i]
+                        ),
+                        "error in distribution"
                     );
                 }
             }
-        }
-        uint256 balance = address(this).balance;
-        if (address(this).balance > 0) {
-            payable(msg.sender).transfer(balance);
         }
     } //function ending
 
@@ -119,21 +132,16 @@ contract SnipeFinanceMultisenders is Ownable {
         receiver = payable(_receiver);
     }
 
-    // Simple BNB withdraw function  --- function 1
-    function withdraw() external onlyOwner {
-        if (feeamounts > 0) payable(msg.sender).transfer(feeamounts);
+    // this function will authorize the user  (user have to be unauthorised first)
+    function authorizeUser(address user) external onlyOwner {
+        require(authorizedusers[user] == false, "user is already authorized");
+        authorizedusers[user] = true;
     }
 
-    // authorizetouse ---- function 2
-    function authorizeToUse(address _addr) external onlyOwner {
-        authorizedusers[_addr] = true;
-    }
-
-    // set authorised addresses  (owner can set address true or false )
-    function setauthor(address _addr, bool _bool) external onlyOwner {
-        if (authorizedusers[_addr]) {
-            authorizedusers[_addr] = _bool;
-        }
+    // this function will unauthorize the user  (user have to be authorised first)
+    function unauthorizeUser(address user) external onlyOwner {
+        require(authorizedusers[user] == true, "user is already unauthorized");
+        authorizedusers[user] = false;
     }
 
     // Set Token Address and Quantity
@@ -141,18 +149,38 @@ contract SnipeFinanceMultisenders is Ownable {
         external
         onlyOwner
     {
-        tokenaddress = token;
+        tokenAddress = token;
         quantity = _amount;
     }
 
-    function readAuthorizedUsers(address user) public view returns (bool) {
-        return authorizedusers[user];
+    //get fee details function is also removed from here because the fee variable is also a public
+
+    //the function is responsible for handling the withdrawal of coin's;
+    function withdrawCoins(uint256 amount) external onlyOwner {
+        require(address(this).balance >= amount, "invalid balance to withdraw");
+        payable(msg.sender).transfer(amount);
     }
 
-    //function to return fee
-    function getFeeDetails() public view returns (uint256) {
-        return fee;
+    //the function is responsible for handling the withdrawal of any erc20 token;
+    function withdrawToken(IERC20 token, uint256 amount) public onlyOwner {
+        require(
+            token.balanceOf(address(this)) >= amount,
+            "contract doesn't have enough token's"
+        );
+        token.transfer(msg.sender, amount);
     }
 
+    //get balance of a contract
+    function contractBalance() public view onlyOwner returns(uint256){
+        return address(this).balance;
+    }
+  
+  //this function is responsible for fetching the input token decimal's
+    function fetchDecimals(ICustomERC20 token) public view returns (uint256) {
+        // MyToken myToken = MyToken(address(token));
+        return token.decimals();
+    }
    
+   //necessary for contract to recieve coin's
+    receive() external payable {} 
 }

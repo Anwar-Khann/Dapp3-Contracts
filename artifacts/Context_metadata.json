@@ -19,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"changes_flattened.sol": "Context"
+			"lastweek_flattened.sol": "Context"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -33,12 +33,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"changes_flattened.sol": {
-			"keccak256": "0x4c1ab204f9dbc03065dd280c3ee58d492c4db6ae1d317ee24f6450466eb8f1fd",
+		"lastweek_flattened.sol": {
+			"keccak256": "0xe97b58f1100c383fbb9ffdfcd8b280b5d2f6818e2e1bfafc12a11e86b679210a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c31861475d3c95f34379a14c7ec46b90b5589cbc1ac167ed1ed8e77aae94a2b4",
-				"dweb:/ipfs/QmYj3UHHqq3G6Gz2TXDXuVSAL5MvSgyd5b7JhWPi33EwHe"
+				"bzz-raw://4ab95c33e4492fe89b34c44d1751150406d7a086bc84379876392b88d3a4eebe",
+				"dweb:/ipfs/QmSDoKHDLkWysu4DKLsu99Lu8MmaufV2yJj3zbku1AZWvK"
 			]
 		}
 	},

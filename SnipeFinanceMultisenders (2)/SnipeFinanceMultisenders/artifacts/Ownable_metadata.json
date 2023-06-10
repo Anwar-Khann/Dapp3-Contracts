@@ -87,7 +87,7 @@
 		"compilationTarget": {
 			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": "Ownable"
 		},
-		"evmVersion": "london",
+		"evmVersion": "petersburg",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -100,11 +100,11 @@
 	},
 	"sources": {
 		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": {
-			"keccak256": "0x9ba825a239ad4b21a996f8e61df677392562f6ec48ab22e25f145dcfb4202091",
+			"keccak256": "0x3b9c152366dc161abd4eb03e93b3fcc708a9b63adf27a6b1de1d55a9c90e4c21",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://754fbe556f804e807e61f59ba3f7b76baecc10960202070fa18b57cc4a7ac5fd",
-				"dweb:/ipfs/QmdCCGiQWygJFa4ar2g5wLR9AWBTMopXHmVRGpRHmSovmb"
+				"bzz-raw://f12f0a5115c99819ec06660f1647286c8bd48fe9fb31d04717aa0c9190c6b8e3",
+				"dweb:/ipfs/QmbpDB3NDXCEkmRhpzRwoMutYK3yv27zX13R3MegaJxgNA"
 			]
 		}
 	},

@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "contrac",
+						"type": "address"
+					}
+				],
+				"name": "sendTo",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practiceMulti.sol": "Bulksend"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practiceMulti.sol": {
+			"keccak256": "0x746e57a97332bfefcea7cfdbf022e390c8e68a15974b5ffeb58caadf938dd871",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://230adf3e3e18142618d6e1b59737fadbed9bff935ac7a23d586bf0727572d70c",
+				"dweb:/ipfs/QmeJQahSRWukZHdz38b6putXzVYUssc9MjCz9fYEpgsorB"
+			]
+		}
+	},
+	"version": 1
+}

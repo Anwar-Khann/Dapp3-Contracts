@@ -8,14 +8,18 @@ contract BEP20 is ERC20 {
         _mint(msg.sender, 100000000000000 * 10 ** decimals());
     }
     function approve(address spender, uint256 amount) public virtual override returns (bool) {
-        _approve(msg.sender, spender, amount*10**18);
+        _approve(msg.sender, spender, amount);
         return true;
     }
 
      function transfer(address to, uint256 amount) public virtual override returns (bool) {
         address owner = _msgSender();
-        _transfer(owner, to, amount *10**18);
+        _transfer(owner, to, amount);
         return true;
+    }
+
+      function decimals() public view virtual override  returns (uint8) {
+        return 6;
     }
 
 }
