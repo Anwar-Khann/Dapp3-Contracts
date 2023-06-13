@@ -232,7 +232,7 @@
 		"compilationTarget": {
 			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": "IERC20"
 		},
-		"evmVersion": "petersburg",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -245,11 +245,11 @@
 	},
 	"sources": {
 		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": {
-			"keccak256": "0x3b9c152366dc161abd4eb03e93b3fcc708a9b63adf27a6b1de1d55a9c90e4c21",
+			"keccak256": "0x5e001732981de5b8a6255b76cf80b41135c9c0860d28a4c0b4856ec49eefb0a2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f12f0a5115c99819ec06660f1647286c8bd48fe9fb31d04717aa0c9190c6b8e3",
-				"dweb:/ipfs/QmbpDB3NDXCEkmRhpzRwoMutYK3yv27zX13R3MegaJxgNA"
+				"bzz-raw://dc8351057250156d5538f40b41232be16c6074d1133f3621568e48dc034c23de",
+				"dweb:/ipfs/QmZDiiog131SKJZqb14F2j4guo9AASTg7HFfWhbYnJKnJ5"
 			]
 		}
 	},

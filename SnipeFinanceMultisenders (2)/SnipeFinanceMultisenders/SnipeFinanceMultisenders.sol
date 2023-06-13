@@ -6,9 +6,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 
 //the reason for this another interface creation because we want to use the decimal's function of each token and it's not available in standard interface
-interface ICustomERC20 is IERC20 {
-    function decimals() external view returns (uint256);
-}
+// interface ICustomERC20 is IERC20 {
+//     function decimals() external view returns (uint256);
+// }
 
 contract SnipeFinanceMultisenders is Ownable {
     using Address for address;
@@ -25,7 +25,7 @@ contract SnipeFinanceMultisenders is Ownable {
 
     //this modifier is responsible for letting know whetehr token holding has been set or not
     modifier tokenChecker() {
-        require(address(tokenAddress) != address(0), "set token holding first");
+        require(address(tokenAddress) != address(0), "token holding invalid");
         _;
     }
 
@@ -72,19 +72,19 @@ contract SnipeFinanceMultisenders is Ownable {
         }
     }
 
-    function TOKENmultisender(
-        ICustomERC20 token,
+    function TOKENmultisender(//ICustomERC20 REPLACED WITH ERC20
+        IERC20 token,
         address[] memory recipients,
         uint256[] memory values
     ) external payable tokenChecker {
         require(address(token).isContract() == true, "not a contract"); //this will check whether it's a contract or EOA address
         require(recipients.length == values.length, "invalid input");
-        uint256 fetched = fetchDecimals(token);
+        // uint256 fetched = fetchDecimals(token);
 
-        // Convert values to fetched token decimals
-        for (uint256 i = 0; i < values.length; i++) {
-            values[i] = values[i] * (10**fetched);
-        }
+        // // Convert values to fetched token decimals
+        // for (uint256 i = 0; i < values.length; i++) {
+        //     values[i] = values[i] * (10**fetched);
+        // }
 
         if (authorizedusers[msg.sender]) {
             for (uint256 i = 0; i < values.length; i++) {
@@ -176,10 +176,10 @@ contract SnipeFinanceMultisenders is Ownable {
     }
   
   //this function is responsible for fetching the input token decimal's
-    function fetchDecimals(ICustomERC20 token) public view returns (uint256) {
-        // MyToken myToken = MyToken(address(token));
-        return token.decimals();
-    }
+    // function fetchDecimals(ICustomERC20 token) public view returns (uint256) {
+    //     // MyToken myToken = MyToken(address(token));
+    //     return token.decimals();
+    // }
    
    //necessary for contract to recieve coin's
     receive() external payable {} 

@@ -236,7 +236,7 @@
 		"compilationTarget": {
 			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": "ICustomERC20"
 		},
-		"evmVersion": "petersburg",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -281,11 +281,11 @@
 			]
 		},
 		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": {
-			"keccak256": "0x2b82221fc614543447a42fce9a2fd16da32a28b7c1130c60937e1d45c07b7e3e",
+			"keccak256": "0xaeecc8463cfef64be1cc369733b1ceff462103350fa2e5b997b2020cda43cd27",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8efcb8cef01647e17a17508d583994b47c156074e1246df6bda970a7d01af013",
-				"dweb:/ipfs/QmQUiZwQG7sC59V33huGnmVpLoa3z7PDgP546LY7F1JaoL"
+				"bzz-raw://4372807b24cce1c2eb59075c0b642e0ee390b6d1031c37718fde016ffb0e7b18",
+				"dweb:/ipfs/QmWSbFxVDJ5agWwAtLGSuinR6AcaGSwNDoe3ssznDh44zP"
 			]
 		}
 	},

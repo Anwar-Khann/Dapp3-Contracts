@@ -50,7 +50,7 @@
 			{
 				"inputs": [
 					{
-						"internalType": "contract ICustomERC20",
+						"internalType": "contract IERC20",
 						"name": "token",
 						"type": "address"
 					},
@@ -136,25 +136,6 @@
 			{
 				"inputs": [],
 				"name": "fee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "contract ICustomERC20",
-						"name": "token",
-						"type": "address"
-					}
-				],
-				"name": "fetchDecimals",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -329,7 +310,7 @@
 		"compilationTarget": {
 			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": "SnipeFinanceMultisenders"
 		},
-		"evmVersion": "petersburg",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -374,11 +355,11 @@
 			]
 		},
 		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": {
-			"keccak256": "0x2b82221fc614543447a42fce9a2fd16da32a28b7c1130c60937e1d45c07b7e3e",
+			"keccak256": "0xf3b3da86c2e75d45ec1c6f1486d970f8f5a17d011e7c86621e12d7751afb0994",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8efcb8cef01647e17a17508d583994b47c156074e1246df6bda970a7d01af013",
-				"dweb:/ipfs/QmQUiZwQG7sC59V33huGnmVpLoa3z7PDgP546LY7F1JaoL"
+				"bzz-raw://a07e45bae75f448869916166897dbf4a81dd07c22cd5d9fd51556f3f0ec738c3",
+				"dweb:/ipfs/QmdHEbMH7B5QHuJn4V6Jk38LUFvNjP6xzRgyRPVon8fA2E"
 			]
 		}
 	},

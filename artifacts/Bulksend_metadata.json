@@ -8,14 +8,43 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address payable",
-						"name": "contrac",
+						"internalType": "address",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "sendTo",
+				"name": "ledger",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "weight",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_weight",
+						"type": "uint256"
+					}
+				],
+				"name": "register",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -34,7 +63,7 @@
 		"compilationTarget": {
 			"practiceMulti.sol": "Bulksend"
 		},
-		"evmVersion": "petersburg",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -47,11 +76,11 @@
 	},
 	"sources": {
 		"practiceMulti.sol": {
-			"keccak256": "0x746e57a97332bfefcea7cfdbf022e390c8e68a15974b5ffeb58caadf938dd871",
+			"keccak256": "0xcae2ee2557a77aaf0d916988b4218831d366831479e16c12419135eebd59d230",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://230adf3e3e18142618d6e1b59737fadbed9bff935ac7a23d586bf0727572d70c",
-				"dweb:/ipfs/QmeJQahSRWukZHdz38b6putXzVYUssc9MjCz9fYEpgsorB"
+				"bzz-raw://2f90b9bc3f2444bee35e94b28dc40ba539430a6c8511298673d104a406d45d1c",
+				"dweb:/ipfs/QmUudwQ2WEPjBZVTyX7Ht5NivP2ZYUcMH7RNWJg9YQqyH1"
 			]
 		}
 	},
