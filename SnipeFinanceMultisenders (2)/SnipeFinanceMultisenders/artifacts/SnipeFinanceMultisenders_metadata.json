@@ -308,7 +308,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": "SnipeFinanceMultisenders"
+			"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": "SnipeFinanceMultisenders"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -322,44 +322,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"@openzeppelin/contracts/access/Ownable.sol": {
-			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
+		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders_flattened.sol": {
+			"keccak256": "0x5e001732981de5b8a6255b76cf80b41135c9c0860d28a4c0b4856ec49eefb0a2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
-				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
-			]
-		},
-		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
-				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
-			]
-		},
-		"@openzeppelin/contracts/utils/Address.sol": {
-			"keccak256": "0x006dd67219697fe68d7fbfdea512e7c4cb64a43565ed86171d67e844982da6fa",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://2455248c8ddd9cc6a7af76a13973cddf222072427e7b0e2a7d1aff345145e931",
-				"dweb:/ipfs/QmfYjnjRbWqYpuxurqveE6HtzsY1Xx323J428AKQgtBJZm"
-			]
-		},
-		"@openzeppelin/contracts/utils/Context.sol": {
-			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
-				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
-			]
-		},
-		"SnipeFinanceMultisenders (2)/SnipeFinanceMultisenders/SnipeFinanceMultisenders.sol": {
-			"keccak256": "0xf3b3da86c2e75d45ec1c6f1486d970f8f5a17d011e7c86621e12d7751afb0994",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://a07e45bae75f448869916166897dbf4a81dd07c22cd5d9fd51556f3f0ec738c3",
-				"dweb:/ipfs/QmdHEbMH7B5QHuJn4V6Jk38LUFvNjP6xzRgyRPVon8fA2E"
+				"bzz-raw://dc8351057250156d5538f40b41232be16c6074d1133f3621568e48dc034c23de",
+				"dweb:/ipfs/QmZDiiog131SKJZqb14F2j4guo9AASTg7HFfWhbYnJKnJ5"
 			]
 		}
 	},
