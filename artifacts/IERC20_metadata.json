@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.16+commit.07a7930e"
+		"version": "0.8.13+commit.abaa5c0e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -230,26 +230,25 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"lastweek_flattened.sol": "IERC20"
+			"erc20cic_flattened.sol": "IERC20"
 		},
-		"evmVersion": "london",
+		"evmVersion": "petersburg",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 50
 		},
 		"remappings": []
 	},
 	"sources": {
-		"lastweek_flattened.sol": {
-			"keccak256": "0xe97b58f1100c383fbb9ffdfcd8b280b5d2f6818e2e1bfafc12a11e86b679210a",
-			"license": "MIT",
+		"erc20cic_flattened.sol": {
+			"keccak256": "0x4f1463a499a78795af353a1bc16839b265fcb8aa66d0a42c0e9d44870f064f75",
 			"urls": [
-				"bzz-raw://4ab95c33e4492fe89b34c44d1751150406d7a086bc84379876392b88d3a4eebe",
-				"dweb:/ipfs/QmSDoKHDLkWysu4DKLsu99Lu8MmaufV2yJj3zbku1AZWvK"
+				"bzz-raw://44933ed4824b6b5d5a2a86a13ddd566319bc68fd86f953e8d2d24ccbece4706e",
+				"dweb:/ipfs/QmcbK2hq4DQW7WqgnAHUkGfYG9UjSZ54ooLHAGacBfRgzJ"
 			]
 		}
 	},
