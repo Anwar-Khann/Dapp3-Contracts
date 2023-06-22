@@ -74,7 +74,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Main_flattened.sol": "Pausable"
+			"Main_flattened.sol": "Pausable"
 		},
 		"evmVersion": "petersburg",
 		"libraries": {},
@@ -88,12 +88,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Main_flattened.sol": {
-			"keccak256": "0xf16bb9af51b2e2ce671b9aaf94b43afbe1c1292ab28fa291877c2c918745458a",
+		"Main_flattened.sol": {
+			"keccak256": "0x37ea3a40248c12af6fb21da0034c7c3d5fc48bbd6668580aa7b5a2120e00f174",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://45c723fd372e7ea8987b3df3e09bd87671e01e68adf7f0a04520b070c8abded4",
-				"dweb:/ipfs/Qmek4iPC4gT6jY7ghNjUdjsC91PGyMRN6ykPaRmNPNqWza"
+				"bzz-raw://0bdf076c5e7dcb41df53bdb7b30b9c02eca9dfb43b17e7d5b10ecf20ee680b2f",
+				"dweb:/ipfs/QmWKZtpJWEUggedEEiVWuyrbiy8FimWyuTp36Emk1nSqj4"
 			]
 		}
 	},

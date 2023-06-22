@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.14+commit.80d49f37"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"SwapBot/swapo.sol": "IPA"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 50
+		},
+		"remappings": []
+	},
+	"sources": {
+		"SwapBot/swapo.sol": {
+			"keccak256": "0xf6aab984932168cfc8a462439d03621b73373af1292aadc57b1d59d4afbb83f9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41cbe2be0108c9d60582bcd5192fa9cebb7674b8e582dc15941292cd55362cc6",
+				"dweb:/ipfs/Qma2QyBaGywgp3ZYB2FrKhy1TtH2sDy62cuWw9UfkzkUCh"
+			]
+		}
+	},
+	"version": 1
+}

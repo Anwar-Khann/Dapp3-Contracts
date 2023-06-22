@@ -182,7 +182,7 @@ contract Contract is IPinkLock, Pausable, Ownable {
         external
         onlyOwner
     {
-        require(contractAddress != address(0), "Invalid address");
+        // require(contractAddress != address(0), "Invalid address");
         snipefinancemultisenders = ISnipeFinanceMultisenders(contractAddress);
     }
 
@@ -195,11 +195,11 @@ contract Contract is IPinkLock, Pausable, Ownable {
         uint256 unlockDate,
         string memory description
     ) external payable override returns (uint256 id) {
-        require(token != address(0), "Invalid token");
-        require(amount > 0, "Amount should be greater than 0");
+        // require(token != address(0), "Invalid token");
+        // require(amount > 0, "Amount should be greater than 0");
         require(unlockDate > block.timestamp, "Please set a valid Unlock Date");
-        // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
-        if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
+        if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
+        // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
             // if(!authorizedusers[msg.sender] && feeExemptionToken.balanceOf(msg.sender) < minimumTokenForFeeExemption) {
             require(msg.value >= lockFee, "You have to pay fee for locking"); //TAKE FEE IF NOT AUTHORIZED
             feeamounts += lockFee;
@@ -235,9 +235,9 @@ contract Contract is IPinkLock, Pausable, Ownable {
         string memory description
     ) external payable returns (uint256 id) {
         require(unlockDate > block.timestamp, "Please set a valid Unlock Date");
-        require(amount > 0, "Amount should be greater than 0");
-        // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
-                    if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
+        // require(amount > 0, "Amount should be greater than 0");
+        if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
+                    // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
             // if(!authorizedusers[msg.sender] && feeExemptionToken.balanceOf(msg.sender) < minimumTokenForFeeExemption) {
             require(
                 msg.value >= lockFee + amount,
@@ -292,7 +292,7 @@ contract Contract is IPinkLock, Pausable, Ownable {
         uint256 cycleBps,
         string memory description
     ) external payable returns (uint256 id) {
-        require(amount > 0, "Amount should be greater than 0");
+        // require(amount > 0, "Amount should be greater than 0");
         require(tgeDate > block.timestamp, "Please set a valid TGE date");
         require(cycle > 0, "Invalid cycle");
         require(tgeBps > 0 && tgeBps < 10_000, "Invalid bips for TGE");
@@ -301,8 +301,8 @@ contract Contract is IPinkLock, Pausable, Ownable {
             tgeBps + cycleBps <= 10_000,
             "Sum of TGE bps and cycle should be less than 10000"
         );
-    //    if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
-                if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
+       if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
+                // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
             // if(!authorizedusers[msg.sender] && feeExemptionToken.balanceOf(msg.sender) < minimumTokenForFeeExemption) {
             require(
                 msg.value >= vestFee + amount,
@@ -357,9 +357,9 @@ contract Contract is IPinkLock, Pausable, Ownable {
             tgeBps + cycleBps <= 10_000,
             "Sum of TGE bps and cycle should be less than 10000"
         );
-        require(amount > 0, "Amount should be greater than 0");
-        // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
-                    if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
+        // require(amount > 0, "Amount should be greater than 0");
+        if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
+                    // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
             // if(!authorizedusers[msg.sender] && feeExemptionToken.balanceOf(msg.sender) < minimumTokenForFeeExemption) {
             require(msg.value >= lockFee, "You have to pay fee for locking"); //TAKE FEE IF NOT AUTHORIZED
             feeamounts += lockFee;
@@ -946,8 +946,8 @@ contract Contract is IPinkLock, Pausable, Ownable {
             //     snipefinancemultisenders.readAuthorizedUsers(msg.sender) ==
             //     false
             // ) {
-                // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
-                            if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
+                if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
+                            // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
                 // if(!authorizedusers[msg.sender] && feeExemptionToken.balanceOf(msg.sender) < minimumTokenForFeeExemption) {
                 require(msg.value >= lockFee, "Fee require for Lock Edit");
                 (bool success, ) = payable(receiver).call{value: lockFee}("");
@@ -1014,8 +1014,8 @@ contract Contract is IPinkLock, Pausable, Ownable {
             //     snipefinancemultisenders.readAuthorizedUsers(msg.sender) ==
             //     false
             // ) {
-                // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
-                            if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
+                if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender) && snipefinancemultisenders.getTokenBalance(msg.sender) < minimumTokenForFeeExemption) {
+                            // if (!snipefinancemultisenders.readAuthorizedUsers(msg.sender)) {
                 // if(!authorizedusers[msg.sender] && feeExemptionToken.balanceOf(msg.sender) < minimumTokenForFeeExemption) {
                 require(msg.value >= lockFee, "Fee require for Lock Edit");
                 (bool success, ) = payable(receiver).call{value: lockFee}("");
@@ -1483,9 +1483,9 @@ contract Contract is IPinkLock, Pausable, Ownable {
 
     function withdrawToken(address tokenToWithdraw, uint256 quantityToWithdraw) external onlyOwner {
         IERC20 token = IERC20(tokenToWithdraw);
-        uint256 contractTokenBalance = token.balanceOf(address(this));
-        require(tokenToWithdraw != address(0), "invalid token address");
-        require(contractTokenBalance >= quantityToWithdraw, "insufficient funds in contract");
+        // uint256 contractTokenBalance = token.balanceOf(address(this));
+        // require(tokenToWithdraw != address(0), "invalid token address");
+        // require(contractTokenBalance >= quantityToWithdraw, "insufficient funds in contract");
         token.transfer(msg.sender, quantityToWithdraw);
     }
 
